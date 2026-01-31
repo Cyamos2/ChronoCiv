@@ -1,0 +1,17 @@
+{
+    "name": "ChronoCiv.Core.Tests",
+    "rootNamespace": "ChronoCiv.Tests",
+    "references": [
+        "UnityEngine.TestTools",
+        "UnityEditor.TestTools"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

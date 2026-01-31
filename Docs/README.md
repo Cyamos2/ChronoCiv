@@ -69,3 +69,59 @@ A retro-style civilization game that spans from Stone Age to Future, with time p
 - JSON data files for easy modding
 - Save/Load system for progress
 
+---
+
+## Testing Guide
+
+### Unity Test Framework Setup
+This project uses Unity Test Framework (UTF) for unit and integration testing.
+
+### Test Location
+All tests are located in: `Source/Tests/`
+
+### Running Tests
+1. **Open Unity Test Runner**: Window > General > Test Runner
+2. **Choose Test Mode**:
+   - Edit Mode: For unit tests (most tests)
+   - Play Mode: For integration tests
+3. **Execute Tests**:
+   - Click 'Run All' for all tests
+   - Select specific tests and click 'Run Selected'
+4. **View Results**:
+   - Green checkmark = Pass
+   - Red X = Fail
+   - Click test for details
+
+### Test Categories
+- **Resource System**: Tests for resource types and management
+- **Era System**: Tests for era progression and transitions
+- **NPC System**: Tests for NPC data structures and behavior
+- **Event System**: Tests for event triggering (coming soon)
+- **Animation System**: Tests for sprite animation (coming soon)
+
+### Available Tests
+1. **ResourceTypeTests.cs**: Validates resource type definitions and conversions
+2. **EraTests.cs**: Tests era data structures and year calculations
+3. **NPCTests.cs**: Tests NPC, NPCProfile, Task data structures
+
+### Editor Test Menu
+Access test functions via Unity menu: **ChronoCiv > Tests**
+- Run All Tests
+- Run Resource/Era/NPC Tests individually
+- Test Documentation
+- Validate Setup
+
+### Creating New Tests
+1. Create test file in `Source/Tests/`
+2. Use NUnit attributes: `[Test]`, `[SetUp]`, `[TearDown]`
+3. Add `[Category("")]` for organization
+4. Add `[Description("")]` for documentation
+5. Follow AAA pattern: Arrange, Act, Assert
+
+### Best Practices
+- Keep tests isolated and independent
+- Use descriptive test names
+- Test one thing per test
+- Group related tests in same class
+- Use Unity's `Assert` methods for Unity-specific assertions
+

@@ -1,0 +1,527 @@
+{
+  "events": [
+    {
+      "id": "founding",
+      "name": "Settlement Founded",
+      "displayName": "A New Beginning",
+      "description": "Your civilization has been established. The journey of ages begins.",
+      "type": "milestone",
+      "era": "stone_age",
+      "trigger": "game_start",
+      "priority": 1000,
+      "choices": [
+        {
+          "id": "start_hunters",
+          "name": "Emphasize Hunting",
+          "description": "Focus on hunting and gathering for survival.",
+          "effects": { "food": 50, "population": 5 }
+        },
+        {
+          "id": "start_gatherers",
+          "name": "Emphasize Gathering",
+          "description": "Focus on foraging and plant resources.",
+          "effects": { "food": 40, "population": 6, "herbs": 10 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_founding",
+      "sound": "chime_positive"
+    },
+    {
+      "id": "era_transition_stone_ancient",
+      "name": "Transition to Ancient Era",
+      "displayName": "The Dawn of Civilization",
+      "description": "Your people have learned to farm and build permanent settlements. A new era begins.",
+      "type": "era_transition",
+      "era": "stone_age",
+      "trigger": "year -3000",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "celebrate",
+          "name": "Celebrate",
+          "description": "Hold a grand celebration.",
+          "effects": { "happiness": 20, "gold": -50 }
+        },
+        {
+          "id": "build_monument",
+          "name": "Build Monument",
+          "description": "Construct a monument to commemorate this achievement.",
+          "effects": { "culture": 50, "stone": -100 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_ancient_classical",
+      "name": "Transition to Classical Era",
+      "displayName": "The Age of Reason",
+      "description": "Philosophy, democracy, and art flourish. Your civilization reaches new heights.",
+      "type": "era_transition",
+      "era": "ancient",
+      "trigger": "year -500",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "philosopher_king",
+          "name": "Establish Philosophy",
+          "description": "Create schools of philosophy.",
+          "effects": { "science": 100, "gold": -100 }
+        },
+        {
+          "id": "great_works",
+          "name": "Create Great Works",
+          "description": "Commission statues and temples.",
+          "effects": { "culture": 150, "gold": -150 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_classical_medieval",
+      "name": "Transition to Medieval Era",
+      "displayName": "The Age of Knights",
+      "description": "A new social order emerges with castles and knights.",
+      "type": "era_transition",
+      "era": "classical",
+      "trigger": "year 500",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "feudal_system",
+          "name": "Establish Feudalism",
+          "description": "Create a system of lords and vassals.",
+          "effects": { "defense": 50, "gold": -100 }
+        },
+        {
+          "id": "church_power",
+          "name": "Strengthen Church",
+          "description": "Let the church guide the people.",
+          "effects": { "faith": 100, "happiness": 10 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_medieval_renaissance",
+      "name": "Transition to Renaissance Era",
+      "displayName": "The Rebirth",
+      "description": "Art, science, and commerce transform society.",
+      "type": "era_transition",
+      "era": "medieval",
+      "trigger": "year 1400",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "patron_arts",
+          "name": "Patron the Arts",
+          "description": "Support artists and scientists.",
+          "effects": { "culture": 200, "gold": -200 }
+        },
+        {
+          "id": "merchant_class",
+          "name": "Rise of Merchants",
+          "description": "Empower trade and commerce.",
+          "effects": { "gold": 300, "culture": 50 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_renaissance_industrial",
+      "name": "Transition to Industrial Era",
+      "displayName": "The Machine Age",
+      "description": "Steam and factories revolutionize production.",
+      "type": "era_transition",
+      "era": "renaissance",
+      "trigger": "year 1800",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "factory_system",
+          "name": "Build Factories",
+          "description": "Embrace industrialization.",
+          "effects": { "production": 200, "pollution": 50 }
+        },
+        {
+          "id": "slow_industrialization",
+          "name": "Gradual Change",
+          "description": "Industrialize slowly to preserve quality of life.",
+          "effects": { "production": 100, "happiness": 20 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_industrial_modern",
+      "name": "Transition to Modern Era",
+      "displayName": "The Modern Age",
+      "description": "Technology and connectivity transform daily life.",
+      "type": "era_transition",
+      "era": "industrial",
+      "trigger": "year 1950",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "mass_society",
+          "name": "Mass Society",
+          "description": "Embrace modernity and consumerism.",
+          "effects": { "happiness": 50, "gold": -200 }
+        },
+        {
+          "id": "technocratic",
+          "name": "Technocratic Approach",
+          "description": "Focus on technological advancement.",
+          "effects": { "science": 200, "gold": -150 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "era_transition_modern_future",
+      "name": "Transition to Future Era",
+      "displayName": "The Future is Now",
+      "description": "Humanity reaches for the stars.",
+      "type": "era_transition",
+      "era": "modern",
+      "trigger": "year 2200",
+      "priority": 2000,
+      "choices": [
+        {
+          "id": "space_age",
+          "name": "Space Exploration",
+          "description": "Invest in space travel.",
+          "effects": { "research": 500, "gold": -500 }
+        },
+        {
+          "id": "post_scarcity",
+          "name": "Post-Scarcity",
+          "description": "Create a utopian society.",
+          "effects": { "happiness": 100, "all_resources": 1000 }
+        }
+      ],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_era_transition",
+      "sound": "fanfare"
+    },
+    {
+      "id": "famine",
+      "name": "Famine",
+      "displayName": "Famine Strikes",
+      "description": "Food supplies are critically low. The people are starving.",
+      "type": "disaster",
+      "era": "stone_age",
+      "trigger": "population > food_storage * 2",
+      "priority": 100,
+      "choices": [
+        {
+          "id": "emergency_hunt",
+          "name": "Emergency Hunt",
+          "description": "Send hunters to find food immediately.",
+          "effects": { "food": 100, "population": -2, "happiness": -20 }
+        },
+        {
+          "id": "ration",
+          "name": "Implement Rationing",
+          "description": "Distribute food equally.",
+          "effects": { "food": 30, "happiness": -30 }
+        },
+        {
+          "id": "forage",
+          "name": "Emergency Foraging",
+          "description": "Send everyone to gather wild foods.",
+          "effects": { "food": 80, "happiness": -10, "herbs": -20 }
+        }
+      ],
+      "once": false,
+      "cooldown": 365,
+      "icon": "event_famine",
+      "sound": "warning"
+    },
+    {
+      "id": "plague",
+      "name": "Plague",
+      "displayName": "Disease Outbreak",
+      "description": "A mysterious illness spreads through the population.",
+      "type": "disaster",
+      "era": "medieval",
+      "trigger": "random 0.001",
+      "priority": 150,
+      "choices": [
+        {
+          "id": "quarantine",
+          "name": "Quarantine",
+          "description": "Isolate the sick.",
+          "effects": { "population": -10, "gold": -50, "happiness": -20 }
+        },
+        {
+          "id": "prayer",
+          "name": "Pray for Salvation",
+          "description": "Call for religious intervention.",
+          "effects": { "population": -30, "faith": 50 }
+        },
+        {
+          "id": "medicine",
+          "name": "Medical Response",
+          "description": "Use medicine and quarantine.",
+          "effects": { "population": -5, "herbs": -50, "gold": -100 }
+        }
+      ],
+      "once": false,
+      "cooldown": 730,
+      "icon": "event_plague",
+      "sound": "warning"
+    },
+    {
+      "id": "earthquake",
+      "name": "Earthquake",
+      "displayName": "Earthquake",
+      "description": "The ground shakes violently! Buildings are damaged.",
+      "type": "disaster",
+      "era": "ancient",
+      "trigger": "random 0.0005",
+      "priority": 120,
+      "choices": [
+        {
+          "id": "repair",
+          "name": "Repair Damage",
+          "description": "Fix the damaged buildings.",
+          "effects": { "stone": -50, "wood": -30, "gold": -50 }
+        },
+        {
+          "id": "relocate",
+          "name": "Relocate",
+          "description": "Move to a safer area.",
+          "effects": { "population": -5, "happiness": -20 }
+        }
+      ],
+      "once": false,
+      "cooldown": 1095,
+      "icon": "event_earthquake",
+      "sound": "warning"
+    },
+    {
+      "id": "golden_age",
+      "name": "Golden Age",
+      "displayName": "Golden Age",
+      "description": "Your civilization reaches a pinnacle of achievement.",
+      "type": "blessing",
+      "era": "classical",
+      "trigger": "culture > 500 and happiness > 80 and population > 50",
+      "priority": 50,
+      "choices": [
+        {
+          "id": "expand",
+          "name": "Expand Influence",
+          "description": "Spread your culture.",
+          "effects": { "culture": 200, "gold": -100 }
+        },
+        {
+          "id": "preserve",
+          "name": "Preserve Legacy",
+          "description": "Record your achievements.",
+          "effects": { "science": 150, "culture": 150 }
+        }
+      ],
+      "once": false,
+      "cooldown": 1825,
+      "icon": "event_golden_age",
+      "sound": "fanfare"
+    },
+    {
+      "id": "barbarian_raid",
+      "name": "Barbarian Raid",
+      "displayName": "Raiders Attack!",
+      "description": "Barbarians are attacking your settlement!",
+      "type": "conflict",
+      "era": "ancient",
+      "trigger": "random 0.001",
+      "priority": 90,
+      "choices": [
+        {
+          "id": "fight_back",
+          "name": "Defend",
+          "description": "Fight off the attackers.",
+          "effects": { "population": -5, "gold": -30, "resources": 20 }
+        },
+        {
+          "id": "pay_tribute",
+          "name": "Pay Tribute",
+          "description": "Give them gold to leave.",
+          "effects": { "gold": -100, "happiness": -20 }
+        },
+        {
+          "id": "flee",
+          "name": "Flee",
+          "description": "Evacuate and hide.",
+          "effects": { "population": -10, "gold": -20, "resources": -30 }
+        }
+      ],
+      "once": false,
+      "cooldown": 365,
+      "icon": "event_raid",
+      "sound": "alert"
+    },
+    {
+      "id": "great_invention",
+      "name": "Great Invention",
+      "displayName": "A Great Discovery!",
+      "description": "Your scholars have made a breakthrough discovery.",
+      "type": "discovery",
+      "era": "renaissance",
+      "trigger": "random 0.002",
+      "priority": 60,
+      "choices": [
+        {
+          "id": "publish",
+          "name": "Publish Findings",
+          "description": "Share the knowledge with the world.",
+          "effects": { "culture": 100, "science": 100 }
+        },
+        {
+          "id": "secret",
+          "name": "Keep Secret",
+          "description": "Use it for your advantage.",
+          "effects": { "production": 100, "gold": 200 }
+        }
+      ],
+      "once": false,
+      "cooldown": 730,
+      "icon": "event_invention",
+      "sound": "chime_positive"
+    },
+    {
+      "id": "wonder_complete",
+      "name": "Wonder Completed",
+      "displayName": "Wonder of the World",
+      "description": "A wonder has been completed! Your civilization is renowned.",
+      "type": "milestone",
+      "era": "classical",
+      "trigger": "wonder_completed",
+      "priority": 500,
+      "choices": [],
+      "once": false,
+      "cooldown": 0,
+      "icon": "event_wonder",
+      "sound": "fanfare",
+      "effects": { "culture": 500, "happiness": 50, "prestige": 100 }
+    },
+    {
+      "id": "population_milestone_10",
+      "name": "Population: 10",
+      "displayName": "A Growing Community",
+      "description": "Your population has reached 10 people.",
+      "type": "milestone",
+      "era": "stone_age",
+      "trigger": "population >= 10",
+      "priority": 100,
+      "choices": [],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_population",
+      "sound": "chime_positive",
+      "effects": { "happiness": 10, "gold": 50 }
+    },
+    {
+      "id": "population_milestone_50",
+      "name": "Population: 50",
+      "displayName": "A Thriving Town",
+      "description": "Your population has reached 50 people.",
+      "type": "milestone",
+      "era": "ancient",
+      "trigger": "population >= 50",
+      "priority": 100,
+      "choices": [],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_population",
+      "sound": "chime_positive",
+      "effects": { "happiness": 20, "gold": 100, "culture": 50 }
+    },
+    {
+      "id": "population_milestone_100",
+      "name": "Population: 100",
+      "displayName": "A Prosperous City",
+      "description": "Your population has reached 100 people.",
+      "type": "milestone",
+      "era": "classical",
+      "trigger": "population >= 100",
+      "priority": 100,
+      "choices": [],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_population",
+      "sound": "fanfare",
+      "effects": { "happiness": 30, "gold": 200, "culture": 100 }
+    },
+    {
+      "id": "population_milestone_500",
+      "name": "Population: 500",
+      "displayName": "A Great Metropolis",
+      "description": "Your population has reached 500 people.",
+      "type": "milestone",
+      "era": "medieval",
+      "trigger": "population >= 500",
+      "priority": 100,
+      "choices": [],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_population",
+      "sound": "fanfare",
+      "effects": { "happiness": 50, "gold": 500, "culture": 300 }
+    },
+    {
+      "id": "population_milestone_1000",
+      "name": "Population: 1000",
+      "displayName": "A World-Class Capital",
+      "description": "Your population has reached 1000 people.",
+      "type": "milestone",
+      "era": "renaissance",
+      "trigger": "population >= 1000",
+      "priority": 100,
+      "choices": [],
+      "once": true,
+      "cooldown": 0,
+      "icon": "event_population",
+      "sound": "fanfare",
+      "effects": { "happiness": 100, "gold": 1000, "culture": 500 }
+    }
+  ],
+  "eventCategories": {
+    "milestone": { "icon": "icon_milestone", "color": "#FFD700" },
+    "disaster": { "icon": "icon_disaster", "color": "#F44336" },
+    "blessing": { "icon": "icon_blessing", "color": "#4CAF50" },
+    "conflict": { "icon": "icon_conflict", "color": "#FF9800" },
+    "discovery": { "icon": "icon_discovery", "color": "#2196F3" },
+    "era_transition": { "icon": "icon_era", "color": "#9C27B0" }
+  },
+  "eventTriggers": {
+    "game_start": "Triggered when a new game begins",
+    "year": "Triggered at specific year (format: 'year XXXX')",
+    "population": "Triggered when population condition is met",
+    "random": "Random chance per day (format: 'random X.XXX')",
+    "wonder_completed": "Triggered when a wonder is completed",
+    "condition": "Custom condition evaluation"
+  }
+}
+

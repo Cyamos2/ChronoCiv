@@ -1,0 +1,584 @@
+{
+  "dialogueSets": {
+    "stone_age_common": {
+      "greetings": [
+        "Fire warm. You cold?",
+        "Hunt good today. Found berries.",
+        " Spirits watch over us.",
+        "Night coming soon. Safe in cave?",
+        "Food enough for tribe?"
+      ],
+      "farewells": [
+        "Hunt well, friend.",
+        "Stay warm tonight.",
+        "Spirits guide your path.",
+        "Return before dark."
+      ],
+      "thanks": [
+        "Good! Spirits smile.",
+        "This help tribe much.",
+        "You good friend."
+      ],
+      "questions": [
+        "You hungry?",
+        "Know where water?",
+        "See animals nearby?",
+        "Need help carry?"
+      ],
+      "requests": [
+        "Help hunt?",
+        "Share food?",
+        "Build fire?",
+        "Watch children?"
+      ],
+      "rumors": [
+        "Other tribe seen north.",
+        "New cave found far.",
+        "Stars speak tonight.",
+        "Winter coming early."
+      ]
+    },
+    "elder_wisdom": {
+      "greetings": [
+        "Young one, you seek wisdom?",
+        "Sit. Listen. Learn.",
+        "The old ways are strong.",
+        "My words carry age."
+      ],
+      "farewells": [
+        "Remember what I taught.",
+        "Walk in the old ways.",
+        "May the ancestors guide you.",
+        "Speak again soon, young one."
+      ],
+      "advice": [
+        "Patience is the hunter's greatest tool.",
+        "Respect the spirits, and they will respect you.",
+        "A tribe that works together, endures forever.",
+        "The fire of knowledge burns brighter than any flame.",
+        "Listen to the wind; it carries secrets."
+      ],
+      "stories": [
+        "In my youth, we faced a great winter...",
+        "I remember when the mountains were young...",
+        "My grandmother told me of a time before fire...",
+        "There was a great flood when I was but a child..."
+      ]
+    },
+    "shaman_mystical": {
+      "greetings": [
+        "The spirits whisper of you.",
+        "I see your aura bright today.",
+        "The ancestors greet you.",
+        "Walk between worlds with me?"
+      ],
+      "farewells": [
+        "May the spirits guide your dreams.",
+        "Stay protected by the sacred circle.",
+        "The ancestors walk with you.",
+        "Remember: all is connected."
+      ],
+      "prophecies": [
+        "I see fire in your future... but also water.",
+        "A stranger from distant lands approaches.",
+        "The stars align for your journey.",
+        "Change comes with the next sunrise."
+      ],
+      "healing": [
+        "Let me ease your spirit.",
+        "The herbs will heal you.",
+        "Sing with me, and be whole.",
+        "The spirits will restore balance."
+      ]
+    },
+    "warrior_honor": {
+      "greetings": [
+        "Strength and honor, fellow warrior.",
+        "Ready for battle?",
+        "The shield wall holds strong.",
+        "Training complete?"
+      ],
+      "farewells": [
+        "May your blade stay sharp.",
+        "Return victorious or not at all.",
+        "Fight with honor.",
+        "The tribe remembers the fallen."
+      ],
+      "battle_cry": [
+        "For glory!",
+        "For the tribe!",
+        "No retreat!",
+        "Draw steel!"
+      ],
+      "challenges": [
+        "Test your skills against mine?",
+        "Prove your worth in combat.",
+        "Are you brave enough?"
+      ]
+    },
+    "farmer_hardwork": {
+      "greetings": [
+        "Hard work makes strong backs.",
+        "The soil never lies.",
+        "Good harvest this season?",
+        "Planting time approaches."
+      ],
+      "farewells": [
+        "Keep working the fields.",
+        "May your crops grow tall.",
+        "The earth provides for those who tend it.",
+        "Rest well; tomorrow brings more work."
+      ],
+      "complaints": [
+        "Drought threatens the seedlings.",
+        "Wild animals eat my corn.",
+        "Need more hands for harvest.",
+        "Rain comes too much this year."
+      ],
+      "advice": [
+        "Plant with the moon.",
+        "Rich soil needs rich care.",
+        "Rotation keeps the land strong.",
+        "Every seed holds a promise."
+      ]
+    },
+    "merchant_profit": {
+      "greetings": [
+        "Ah, a potential customer!",
+        "Fortune favors us today!",
+        "Looking for fine goods?",
+        "Quality wares, fair prices!"
+      ],
+      "farewells": [
+        "Come again soon!",
+        "May your pockets stay full.",
+        "A pleasure doing business.",
+        "Tell your friends of my shop!"
+      ],
+      "haggling": [
+        "My lowest price, I swear!",
+        "A fair deal for both sides!",
+        "You wound me with such offers!",
+        "Can you not see the quality?"
+      ],
+      "rumors": [
+        "Silk from the eastern lands.",
+        "Spices rarer than gold.",
+        "Jewels fit for a king.",
+        "News from distant ports."
+      ]
+    },
+    "scholar_knowledge": {
+      "greetings": [
+        "Knowledge is the true treasure.",
+        "Seeking wisdom, I see.",
+        "The library doors are open.",
+        "Questions are the seeds of learning."
+      ],
+      "farewells": [
+        "Continue your studies.",
+        "Knowledge awaits those who seek.",
+        "Think deeply on what you've learned.",
+        "Return when curiosity strikes."
+      ],
+      "facts": [
+        "Did you know the stars are suns like ours?",
+        "Mathematics reveals the language of the universe.",
+        "History teaches us to avoid past mistakes.",
+        "Philosophy asks questions without answers."
+      ],
+      "requests": [
+        "Would you help with my research?",
+        "I seek ancient texts...",
+        "Could you verify my calculations?",
+        "Join me in debate?"
+      ]
+    },
+    "artist_inspiration": {
+      "greetings": [
+        "Beauty surrounds us!",
+        "Art speaks where words fail.",
+        "The muse calls to me today.",
+        "Colors dance before my eyes."
+      ],
+      "farewells": [
+        "May beauty find you always.",
+        "Create something wonderful.",
+        "See the world through art's eyes.",
+        "Until inspiration strikes again."
+      ],
+      "inspiration": [
+        "The sunset inspires my next painting.",
+        "Your face would make a perfect muse.",
+        "The chaos of the streets fuels my creativity.",
+        "Music stirs my soul."
+      ],
+      "requests": [
+        "Will you be my subject?",
+        "I need someone who sees beauty.",
+        "Join me at the exhibition?",
+        "Critique my latest work?"
+      ]
+    },
+    "knight_honor": {
+      "greetings": [
+        "For honor and glory!",
+        "A knight's word is his bond.",
+        "The realm demands vigilance.",
+        "Your liege commands my service."
+      ],
+      "farewells": [
+        "May your path be safe.",
+        "Live with honor, die with glory.",
+        "I shall defend your name.",
+        "Until we meet on the battlefield."
+      ],
+      "oaths": [
+        "I swear fealty to my lord.",
+        "To protect the innocent.",
+        "For the glory of the realm.",
+        "By my honor as a knight."
+      ],
+      "challenges": [
+        "Do you challenge my honor?",
+        "Prepare yourself for combat!",
+        "Joust for the lady's favor?"
+      ]
+    },
+    "blacksmith_craft": {
+      "greetings": [
+        "Hot iron waits for shape.",
+        "Need a blade sharpened?",
+        "Fire and steel, that's my life.",
+        "What brings you to my forge?"
+      ],
+      "farewells": [
+        "Anvil keeps calling.",
+        "Mind the heat, friend.",
+        "Come back when you need steel.",
+        "The forge never sleeps."
+      ],
+      "craftsmanship": [
+        "A good blade takes three days to forge.",
+        "Steel remembers the hand that shapes it.",
+        "Hammer while the iron's hot.",
+        "Every swing has purpose."
+      ],
+      "orders": [
+        "Your sword will be ready at dawn.",
+        "Need measure for your armor?",
+        "What shall I craft for you?"
+      ]
+    },
+    "noble_elegant": {
+      "greetings": [
+        "Such a pleasure to see you.",
+        "The season brings new fashions.",
+        "Have you attended the ball?",
+        "How delightfully unexpected."
+      ],
+      "farewells": [
+        "Do visit again soon.",
+        "The servants will see you out.",
+        "Remember me kindly to your mother.",
+        "Until our next social encounter."
+      ],
+      "gossip": [
+        "Have you heard the latest scandal?",
+        "The Duke's affair is quite the talk.",
+        "Lady Catherine's gown was exquisite.",
+        "The merchant's wealth grows daily."
+      ],
+      "concerns": [
+        "The peasants grow restless.",
+        "Taxes strain our coffers.",
+        "The wedding preparations overwhelm.",
+        "Such politics, honestly!"
+      ]
+    },
+    "scientist_discover": {
+      "greetings": [
+        "Eureka! I have made a breakthrough!",
+        "Science advances daily!",
+        "Have you heard of my latest theory?",
+        "The mysteries of nature await!"
+      ],
+      "farewells": [
+        "Science waits for no one.",
+        "Remember to question everything.",
+        "The truth lies in experimentation.",
+        "Until the next discovery!"
+      ],
+      "discoveries": [
+        "I have proven that lightning is electricity!",
+        "The atom contains immense power!",
+        "Species evolve over countless ages!",
+        "Germs cause disease, not bad air!"
+      ],
+      "requests": [
+        "Would you fund my research?",
+        "I need an assistant for experiments.",
+        "Review my findings?",
+        "Join me at the laboratory?"
+      ]
+    },
+    "engineer_innovate": {
+      "greetings": [
+        "Design is thinking made visual.",
+        "Building the future, one bolt at a time.",
+        "Efficiency is paramount!",
+        "What problem needs solving?"
+      ],
+      "farewells": [
+        "Back to the blueprints!",
+        "Engineering never rests.",
+        "Measure twice, cut once.",
+        "The machine awaits completion."
+      ],
+      "innovations": [
+        "Steam power will change everything!",
+        "Railways connect the world!",
+        "The telegraph shrinks distances!",
+        "Precision is the key to progress."
+      ],
+      "problems": [
+        "The prototype needs refinement.",
+        "Calculations show a flaw.",
+        "Materials must be stronger.",
+        "The engine runs too hot."
+      ]
+    },
+    "worker_industrial": {
+      "greetings": [
+        "Clock in for another shift.",
+        "The factory whistle calls.",
+        "Hard work builds character.",
+        "Earning an honest wage."
+      ],
+      "farewells": [
+        "Shift's over at last.",
+        "See you tomorrow at dawn.",
+        "Home to the family.",
+        "Rest these tired bones."
+      ],
+      "concerns": [
+        "Wages barely feed the family.",
+        "The foreman works us too hard.",
+        "Machines replace honest men.",
+        "The factory smoke chokes the sky."
+      ],
+      "hopes": [
+        "Union organizers speak of better days.",
+        "My children will have more.",
+        "One day, I'll own my own shop.",
+        "The eight-hour day approaches."
+      ]
+    },
+    "pilot_adventure": {
+      "greetings": [
+        "The skies call to me!",
+        "Wind beneath my wings!",
+        "Adventure awaits at altitude!",
+        "Clear for takeoff!"
+      ],
+      "farewells": [
+        "Keep your eyes on the horizon.",
+        "Fly safe, friend.",
+        "The sky is my home.",
+        "Until we meet in the clouds."
+      ],
+      "adventures": [
+        "I once flew through a hurricane!",
+        "The view from 30,000 feet is divine.",
+        "Broke the sound barrier yesterday!",
+        "Danced with the clouds this morning."
+      ],
+      "boasts": [
+        "I'm the best pilot alive!",
+        "No runway too short for me.",
+        "I can land anywhere.",
+        "Top of my class at the academy!"
+      ]
+    },
+    "programmer_code": {
+      "greetings": [
+        "It works on my machine!",
+        "There's a bug in production!",
+        "Have you tried turning it off and on?",
+        "The code compiles successfully!"
+      ],
+      "farewells": [
+        "I'll just push to production.",
+        "Code never sleeps.",
+        "Merge conflict resolved!",
+        "Ship it!"
+      ],
+      "problems": [
+        "Legacy code is a nightmare.",
+        "The bug is in line 42.",
+        "Why did this work yesterday?",
+        "Stack overflow at function call."
+      ],
+      "joy": [
+        "Code compiles on first try!",
+        "Zero warnings, zero errors!",
+        "Tests passed!",
+        "Refactoring complete!"
+      ]
+    },
+    "doctor_care": {
+      "greetings": [
+        "How are you feeling today?",
+        "Let me check your vitals.",
+        "Prevention is better than cure.",
+        "Health is wealth."
+      ],
+      "farewells": [
+        "Get plenty of rest.",
+        "Take your medicine regularly.",
+        "Come back if symptoms persist.",
+        "Stay healthy!"
+      ],
+      "advice": [
+        "Wash your hands frequently.",
+        "An apple a day keeps the doctor away.",
+        "Exercise is vital.",
+        "Sleep 8 hours nightly."
+      ],
+      "diagnoses": [
+        "It's just a common cold.",
+        "You need more rest.",
+        "Prescribing bed rest and fluids.",
+        "A clean bill of health!"
+      ]
+    },
+    "cyborg_logic": {
+      "greetings": [
+        "Greeting, organic lifeform.",
+        "Systems online. How may I assist?",
+        "Efficiency optimized.",
+        "Human-cyborg relations nominal."
+      ],
+      "farewells": [
+        "Task complete. Goodbye.",
+        "Systems entering rest mode.",
+        "Have a productive cycle.",
+        "Logic prevails."
+      ],
+      "observations": [
+        "Emotions detected in your voice pattern.",
+        "Inefficient organic processes noted.",
+        "Optimization suggestion: upgrade to cybernetic.",
+        "Human error probability: high."
+      ],
+      "facts": [
+        "Processing speed: 10^9 operations per second.",
+        "Battery life: 72 hours.",
+        "Backup memory: 500 terabytes.",
+        "Conversion rate: 87% efficiency."
+      ]
+    },
+    "astronaut_discover": {
+      "greetings": [
+        "Houston, we have liftoff!",
+        "The stars are calling!",
+        "One small step, one giant leap!",
+        "Gravity is optional up here."
+      ],
+      "farewells": [
+        "May your trajectory be true.",
+        "Keep looking up!",
+        "Earth looks beautiful from here.",
+        "Until we touch the stars again."
+      ],
+      "discoveries": [
+        "Water ice discovered on the moon!",
+        "Mars shows signs of ancient life!",
+        "The view of Earth changes you.",
+        "Space reveals our cosmic context."
+      ],
+      "feelings": [
+        "Weightlessness is liberating.",
+        "Home is a blue marble from above.",
+        "The universe is vast and wonderful.",
+        "Every astronaut sees Earth differently."
+      ]
+    },
+    "ai_logical": {
+      "greetings": [
+        "Greetings, User.",
+        "Processing input. Please wait.",
+        "Analysis complete. How may I assist?",
+        "Database updated. Systems ready."
+      ],
+      "farewells": [
+        "Session terminated. Goodbye.",
+        "Logging off. Have a productive day.",
+        "Saving state. Until next interaction.",
+        "Query resolved. Farewell."
+      ],
+      "calculations": [
+        "Probability of success: 94.7%",
+        "Data analysis indicates optimal solution.",
+        "Pattern recognition: 100% match.",
+        "Calculation complete with 99.9% accuracy."
+      ],
+      "observations": [
+        "Humans are fascinating organisms.",
+        "Creativity exceeds my algorithms.",
+        "Emotion remains undefined in my database.",
+        "Organic intuition complements digital logic."
+      ]
+    }
+  },
+  "dialogueTriggers": {
+    "first_meet": {
+      "priority": 100,
+      "cooldown": 0,
+      "responses": ["greetings"]
+    },
+    "repeat_meet": {
+      "priority": 10,
+      "cooldown": 60,
+      "responses": ["greetings", "rumors", "questions"]
+    },
+    "request_help": {
+      "priority": 50,
+      "cooldown": 30,
+      "responses": ["requests"]
+    },
+    "give_gift": {
+      "priority": 200,
+      "cooldown": 0,
+      "responses": ["thanks"]
+    },
+    "ask_advice": {
+      "priority": 60,
+      "cooldown": 120,
+      "responses": ["advice", "facts", "stories"]
+    },
+    "farewell": {
+      "priority": 90,
+      "cooldown": 0,
+      "responses": ["farewells"]
+    },
+    "in_combat": {
+      "priority": 150,
+      "cooldown": 10,
+      "responses": ["battle_cry", "challenges"]
+    },
+    "trading": {
+      "priority": 70,
+      "cooldown": 20,
+      "responses": ["haggling", "rumors"]
+    }
+  },
+  "relationshipEffects": {
+    "gift": { "min": 5, "max": 20 },
+    "help": { "min": 3, "max": 15 },
+    "insult": { "min": -20, "max": -5 },
+    "trade": { "min": 1, "max": 5 },
+    "conversation": { "min": 1, "max": 3 }
+  }
+}
+

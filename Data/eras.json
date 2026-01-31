@@ -1,0 +1,161 @@
+{
+  "eras": [
+    {
+      "id": "stone_age",
+      "name": "Stone Age",
+      "displayName": "Stone Age",
+      "startYear": -5000,
+      "endYear": -3000,
+      "color": "#8B7355",
+      "icon": "era_stone_age",
+      "musicTheme": "ambient_forest",
+      "buildings": ["cave", "tent", "campfire", "stone_altar"],
+      "clothingStyle": "fur_pelt",
+      "technologyLevel": 1,
+      "description": "The dawn of humanity. People live in small bands, hunting and gathering for survival."
+    },
+    {
+      "id": "ancient",
+      "name": "Ancient Era",
+      "displayName": "Ancient Era",
+      "startYear": -3000,
+      "endYear": -500,
+      "color": "#CD853F",
+      "icon": "era_ancient",
+      "musicTheme": "mysterious_orient",
+      "buildings": ["hut", "granary", "temple", "walls", "palace"],
+      "clothingStyle": "linen_tunic",
+      "technologyLevel": 2,
+      "description": "Civilizations rise along great rivers. Writing, mathematics, and organized religion emerge."
+    },
+    {
+      "id": "classical",
+      "name": "Classical Era",
+      "displayName": "Classical Era",
+      "startYear": -500,
+      "endYear": 500,
+      "color": "#DAA520",
+      "icon": "era_classical",
+      "musicTheme": "epic_greco_roman",
+      "buildings": ["house", "market", "academy", "theater", "forum", "aqueduct"],
+      "clothingStyle": "toga_tunic",
+      "technologyLevel": 3,
+      "description": "Great empires span continents. Philosophy, democracy, and engineering reach new heights."
+    },
+    {
+      "id": "medieval",
+      "name": "Medieval Era",
+      "displayName": "Medieval Era",
+      "startYear": 500,
+      "endYear": 1400,
+      "color": "#8B4513",
+      "icon": "era_medieval",
+      "musicTheme": "medieval_trumpet",
+      "buildings": ["cottage", "castle", "cathedral", "blacksmith", "inn", "wall_tower"],
+      "clothingStyle": "knight_armor",
+      "technologyLevel": 4,
+      "description": "Feudalism dominates. Knights, castles, and the church shape society."
+    },
+    {
+      "id": "renaissance",
+      "name": "Renaissance Era",
+      "displayName": "Renaissance",
+      "startYear": 1400,
+      "endYear": 1800,
+      "color": "#9932CC",
+      "icon": "era_renaissance",
+      "musicTheme": "classical_italian",
+      "buildings": ["villa", "university", "art_gallery", "bank", "workshop"],
+      "clothingStyle": "noble_attire",
+      "technologyLevel": 5,
+      "description": "Art, science, and commerce flourish. A rebirth of classical knowledge transforms society."
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial Era",
+      "displayName": "Industrial Era",
+      "startYear": 1800,
+      "endYear": 1950,
+      "color": "#696969",
+      "icon": "era_industrial",
+      "musicTheme": "industrial_hymns",
+      "buildings": ["factory", "railway_station", "power_plant", "department_store", "tenement"],
+      "clothingStyle": "victorian_suit",
+      "technologyLevel": 6,
+      "description": "Steam power revolutionizes production. Cities grow, and the world becomes more connected."
+    },
+    {
+      "id": "modern",
+      "name": "Modern Era",
+      "displayName": "Modern Era",
+      "startYear": 1950,
+      "endYear": 2200,
+      "color": "#4682B4",
+      "icon": "era_modern",
+      "musicTheme": "swing_jazz",
+      "buildings": ["apartment", "office_building", "hospital", "school", "shopping_center"],
+      "clothingStyle": "contemporary",
+      "technologyLevel": 7,
+      "description": "Technology advances rapidly. The world becomes a global village."
+    },
+    {
+      "id": "future",
+      "name": "Future Era",
+      "displayName": "Future Era",
+      "startYear": 2200,
+      "endYear": 5000,
+      "color": "#00CED1",
+      "icon": "era_future",
+      "musicTheme": "synthwave",
+      "buildings": ["skyscraper", "space_port", "fusion_plant", "cyber_cafe", "holo_theater"],
+      "clothingStyle": "cyber_attire",
+      "technologyLevel": 8,
+      "description": "Humanity reaches for the stars. Technology transcends current understanding."
+    }
+  ],
+  "eraTransitions": {
+    "stone_age_to_ancient": {
+      "triggerYear": -3000,
+      "visualEffect": "aurora_borealis",
+      "soundEffect": "chimes",
+      "description": "The first cities rise from the earth..."
+    },
+    "ancient_to_classical": {
+      "triggerYear": -500,
+      "visualEffect": "sunrise_glow",
+      "soundEffect": "trumpets",
+      "description": "Great philosophers shape the way we think..."
+    },
+    "classical_to_medieval": {
+      "triggerYear": 500,
+      "visualEffect": "dust_storm",
+      "soundEffect": "church_bells",
+      "description": "A new order emerges from the chaos..."
+    },
+    "medieval_to_renaissance": {
+      "triggerYear": 1400,
+      "visualEffect": "golden_light",
+      "soundEffect": "harpsichord",
+      "description": "Art and knowledge are reborn..."
+    },
+    "renaissance_to_industrial": {
+      "triggerYear": 1800,
+      "visualEffect": "smoke_cloud",
+      "soundEffect": "steam_whistle",
+      "description": "Machines change the world forever..."
+    },
+    "industrial_to_modern": {
+      "triggerYear": 1950,
+      "visualEffect": "electric_surge",
+      "soundEffect": "radio_static",
+      "description": "The modern age dawns..."
+    },
+    "modern_to_future": {
+      "triggerYear": 2200,
+      "visualEffect": "quantum_rift",
+      "soundEffect": "sci_fi_whoosh",
+      "description": "The future is now..."
+    }
+  }
+}
+

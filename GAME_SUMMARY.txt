@@ -8,6 +8,29 @@ ChronoCiv is a retro-style civilization game built with Unity/C# that spans
 from the Stone Age to a futuristic era, with time progressing 100 years per
 in-game day. Characters move freely in a large world with multiple biomes.
 
+PLATFORMS
+=========
+
+Desktop (Windows, Mac, Linux)
+-----------------------------
+- Mouse and keyboard controls
+- Full keyboard shortcuts
+- High-resolution support
+
+iOS (iPhone, iPad)
+------------------
+- Touch-based controls
+- Virtual cursor for precise movement
+- Virtual joystick option
+- Pinch to zoom, swipe to pan
+- Haptic feedback support
+
+CROSS-PLAY FEATURES
+===================
+- Same save files across all platforms
+- Cloud save support
+- Unified progression system
+
 SPECIFICATIONS
 ==============
 

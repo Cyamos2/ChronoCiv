@@ -1,4 +1,37 @@
 {
+  "playerProfiles": [
+    {
+      "id": "player_leader",
+      "name": "Leader",
+      "displayName": "Leader",
+      "gender": "neutral",
+      "era": "stone_age",
+      "archetype": "leader",
+      "spriteBase": "player_leader",
+      "animations": ["idle", "walk", "run", "interact", "talk"],
+      "spriteSize": [16, 24],
+      "defaultTask": "leading",
+      "skills": ["leadership", "diplomacy", "management", "survival"],
+      "dialogueSet": "player_greeting",
+      "clothing": {
+        "stone_age": "leader_furs",
+        "ancient": "leader_tunic",
+        "classical": "leader_toga",
+        "medieval": "leader_armor",
+        "renaissance": "leader_coat",
+        "industrial": "leader_suit",
+        "modern": "leader_attire",
+        "future": "leader_exosuit"
+      },
+      "equipment": ["leadership_badge", "ancient_tablet"],
+      "spawnWeight": 0,
+      "canMigrate": true,
+      "canReproduce": false,
+      "lifespan": 999,
+      "description": "The leader of your civilization, guiding humanity through the ages.",
+      "isPlayer": true
+    }
+  ],
   "npcProfiles": [
     {
       "id": "hunter_gatherer_male",

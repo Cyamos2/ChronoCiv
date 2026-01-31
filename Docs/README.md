@@ -56,10 +56,62 @@ A retro-style civilization game that spans from Stone Age to Future, with time p
 ---
 
 ## Controls
-- **Left Click**: Select/interact
-- **Right Click**: Move character
+
+### Desktop Controls
+- **Left Click**: Select/interact with NPCs, buildings
+- **Right Click**: Move character to position
+- **Middle Click / Alt+Left Click**: Pan camera
+- **Mouse Scroll**: Zoom in/out
 - **Space**: Pause/Resume time
-- **Escape**: Menu
+- **Escape**: Open menu
+
+### iOS Controls
+- **Tap**: Select/interact with NPCs, buildings
+- **Tap & Hold (short)**: Show virtual cursor
+- **Tap & Hold (long)**: Move character to position
+- **Swipe (1 finger)**: Pan camera
+- **Swipe (2 fingers)**: Pan camera (larger area)
+- **Pinch (2 fingers)**: Zoom in/out
+- **Double Tap**: Toggle virtual cursor visibility
+
+### Virtual Joystick (Optional)
+When enabled, the virtual joystick appears on the left side of the screen:
+- **Drag joystick**: Move character
+- **Joystick handles**: Visual feedback for direction and intensity
+
+### Virtual Cursor
+On iOS, a virtual cursor follows your touch input:
+- **Visual indicator**: Shows current touch position
+- **Trail effect**: Shows movement history
+- **Click feedback**: Visual and haptic feedback on tap
+- **Movement marker**: Shows target destination when moving
+
+---
+
+## iOS-Specific Features
+
+### Touch Gestures
+- Single-finger tap for interaction
+- Single-finger drag for camera panning
+- Two-finger pinch for zoom
+- Two-finger pan for larger movements
+
+### Haptic Feedback
+- Light impact on UI interactions
+- Success feedback on task completion
+- Warning feedback on important events
+- Can be disabled in settings
+
+### Performance Optimization
+- Automatic frame rate limiting (60 FPS)
+- Particle effect reduction on low-end devices
+- Reduced visual effects in low power mode
+- Smart batching of draw calls
+
+### Safe Area Support
+- Respects iOS safe areas on notched devices
+- Landscape-only orientation for optimal gameplay
+- Proper padding around device edges
 
 ---
 

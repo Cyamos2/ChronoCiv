@@ -81,12 +81,18 @@ def create_pixel_image(width, height, pixels, palette=None):
         color_map["transparent"] = (0, 0, 0, 0)
         color_map["#000000"] = (0, 0, 0, 255)
         color_map["#FFFFFF"] = (255, 255, 255, 255)
+        color_map["#2F2F2F"] = (47, 47, 47, 255)
+        color_map["stone"] = (128, 128, 128, 255)
+        color_map["terrain"] = (139, 69, 19, 255)
     else:
         color_map = {
             "transparent": (0, 0, 0, 0),
             "#8B4513": (139, 69, 19, 255),
             "#228B22": (34, 139, 34, 255),
             "#D2B48C": (210, 180, 140, 255),
+            "#2F2F2F": (47, 47, 47, 255),
+            "stone": (128, 128, 128, 255),
+            "terrain": (139, 69, 19, 255),
         }
     
     img = Image.new('RGBA', (width, height), (0, 0, 0, 0))
@@ -129,12 +135,12 @@ def generate_building_sprite(building_type, size=(32, 32)):
     for y in range(height):
         row = []
         for x in range(width):
-            if y < 4:  # Roof
-                row.append("roof")
-            elif y < height - 4:  # Walls
-                row.append("wall")
-            else:  # Foundation
-                row.append("foundation")
+            if y < 4:  # Roof - use terrain color as base
+                row.append("terrain")
+            elif y < height - 4:  # Walls - use stone/brown
+                row.append("stone")
+            else:  # Foundation - use dark stone
+                row.append("#2F2F2F")
         pixels.append(row)
     
     return pixels

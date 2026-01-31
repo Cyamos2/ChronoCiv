@@ -1,0 +1,9 @@
+{
+  "atlas_name": "ChronoCiv_Sprites",
+  "sprites": [],
+  "packing": {
+    "power_of_two": true,
+    "padding": 2,
+    "extrude": 1
+  }
+}

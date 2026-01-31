@@ -1,0 +1,252 @@
+CHRONOCIV - RETRO CIVILIZATION GAME
+=====================================
+
+PROJECT SUMMARY
+===============
+
+ChronoCiv is a retro-style civilization game built with Unity/C# that spans
+from the Stone Age to a futuristic era, with time progressing 100 years per
+in-game day. Characters move freely in a large world with multiple biomes.
+
+SPECIFICATIONS
+==============
+
+Resolution: 640x360 (16:9 aspect ratio)
+Pixel Scale: 2x-3x for crisp retro look
+Starting Era: Stone Age (-5000 BCE)
+Time Progression: 100 years/day (even while idle)
+World Biomes: 10 unique biomes
+
+ERAS (8 Total)
+==============
+1. Stone Age (-5000 BCE) - Hunter-gatherer society
+2. Ancient Era (-3000 BCE) - First civilizations
+3. Classical Era (-500 CE) - Great empires
+4. Medieval Era (500 CE) - Knights and castles
+5. Renaissance Era (1400 CE) - Arts and science
+6. Industrial Era (1800 CE) - Steam power revolution
+7. Modern Era (1950 CE) - Technology age
+8. Future Era (2200 CE) - Space age
+
+BIOMES (10 Total)
+=================
+1. Grassland - Temperate plains with good fertility
+2. Temperate Forest - Wooded areas with varied resources
+3. Taiga - Cold evergreen forests
+4. Desert - Arid wasteland with precious resources
+5. Tundra - Frozen wastelands
+6. Swamp - Wetlands with unique resources
+7. Mountain - Mining opportunities
+8. Ocean - Fishing and maritime resources
+9. River - Freshwater and fertile land
+10. Savanna - Tropical grasslands
+
+FILE STRUCTURE
+==============
+
+Data/
+├── eras.json          - Era definitions and transitions
+├── resources.json     - Resource types and values
+├── buildings.json     - Building definitions by era
+├── npc_profiles.json  - NPC character profiles
+├── dialogue.json      - NPC dialogue lines
+├── tasks.json         - Task definitions
+├── weather.json       - Weather, biomes, seasons
+├── tech_tree.json     - Technology progression
+├── events.json        - Game events
+└── Art/
+    └── Sprites/       - Pixel art sprites
+
+Source/
+├── Core/
+│   ├── TimeManager.cs    - Time progression (100 years/day)
+│   ├── EventBus.cs       - Event system for decoupled communication
+│   └── SaveSystem.cs     - Save/load functionality
+├── GamePlay/
+│   ├── Eras/
+│   │   ├── Era.cs        - Era data structure
+│   │   └── EraManager.cs - Era progression management
+│   ├── NPCs/
+│   │   ├── NPC.cs        - Individual NPC with AI movement
+│   │   ├── NPCManager.cs - NPC spawning and management
+│   │   ├── Task.cs       - Task definition
+│   │   ├── TaskManager.cs - Task assignment
+│   │   ├── DialogueManager.cs - NPC dialogue
+│   │   └── DialogueLine.cs - Dialogue data
+│   ├── Animation/
+│   │   ├── SpriteAnimator.cs - Pixel sprite animation
+│   │   └── AnimationSet.cs   - Animation clip definitions
+│   ├── Weather/
+│   │   ├── WeatherManager.cs - Weather and biome system
+│   │   ├── WeatherState.cs   - Weather data
+│   │   └── DayNightCycle.cs  - Day/night timing
+│   ├── Resources/
+│   │   ├── ResourceManager.cs - Resource economy
+│   │   └── ResourceType.cs    - Resource definitions
+│   ├── TechTree/
+│   │   ├── TechTreeManager.cs - Technology research
+│   │   └── TechNode.cs        - Technology node
+│   ├── Events/
+│   │   ├── EventManager.cs - Event system
+│   │   ├── Event.cs        - Event definition
+│   │   └── EventTrigger.cs - Event triggers
+│   └── OfflineProgress/
+│       ├── OfflineCalculator.cs - Offline progress
+│       └── OfflineReport.cs     - Offline report UI
+└── UI/
+    ├── GameUI.cs        - Main game HUD
+    ├── MainMenuUI.cs    - Main menu
+    ├── DialogueBubbleUI.cs - NPC dialogue bubbles
+    ├── TaskPanelUI.cs   - Task assignment panel
+    └── PixelNotificationUI.cs - Notifications
+
+Tools/
+└── generate_sprites.py - Pixel art sprite generator
+
+FEATURES
+========
+
+Time & Progression
+- 100 years pass each in-game day
+- Time continues even while idle
+- Era transitions with visual effects
+- Day/night cycle with 8 phases
+
+NPC System
+- Free-roaming characters with AI movement
+- 23 unique NPC archetypes
+- Era-appropriate clothing and equipment
+- Dialogue system with multiple responses
+- Task assignment and completion
+- Population growth and aging
+
+World Generation
+- 10 biomes with unique characteristics
+- Procedural terrain generation
+- Weather system with 15+ weather types
+- 4 seasons affecting gameplay
+- Temperature and humidity simulation
+
+Building System
+- 40+ buildings across all eras
+- Building categories: housing, production, military, etc.
+- Resource production and consumption
+- Building unlock requirements
+
+Technology Tree
+- 60+ technologies across 8 eras
+- Prerequisites and dependencies
+- Research bonuses from buildings
+- Era-specific tech categories
+
+Event System
+- 20+ game events
+- Random events (famine, plague, disasters)
+- Era transition events
+- Milestone celebrations
+- Player choices with consequences
+
+Resource Management
+- 20 resource types
+- Resource production and consumption
+- Storage limits
+- Trading and conversion
+
+Save System
+- Automatic and manual saving
+- Quick save/load
+- Multiple save slots
+- Save file management
+
+HOW TO RUN
+==========
+
+1. Open the project in Unity (2021.3+ recommended)
+
+2. Set up the project:
+   - Import all PNG sprites from Data/Art/Sprites
+   - Set texture type to "Sprite (2D and UI)"
+   - Pixels per unit: 16 for NPCs, 32 for buildings
+
+3. Create scenes:
+   - MainMenu.scene - Title screen
+   - Game.scene - Main gameplay scene
+
+4. Add prefabs:
+   - NPC prefab with SpriteAnimator component
+   - Building prefabs
+   - UI canvas with GameUI prefab
+
+5. Press Play to start!
+
+GENERATING SPRITES
+==================
+
+To generate pixel art sprites:
+```bash
+cd /Users/christopheramos/Projects/ChronoCiv
+python3 Tools/generate_sprites.py --output Data/Art/Sprites
+```
+
+Requires: pip install pillow
+
+SPRITE SPECIFICATIONS
+====================
+
+NPC Sprites: 16x24 pixels (with directional variations)
+Building Sprites: 32x32 pixels (variable heights)
+Terrain Tiles: 16x16 pixels
+UI Icons: 16x16 pixels
+Animation: 8 FPS for idle, 12 FPS for movement
+
+COLOR PALETTE
+=============
+
+Each era has a unique color palette:
+- Stone Age: Earthy browns and greens
+- Ancient: Warm golds and terracottas
+- Classical: Whites, creams, and marble
+- Medieval: Rich reds, purples, and dark colors
+- Renaissance: Deep jewel tones
+- Industrial: Grays and steely blues
+- Modern: Diverse contemporary colors
+- Future: Neon and holographic colors
+
+CUSTOMIZATION
+=============
+
+To modify game balance:
+- Edit Data/eras.json for era timing
+- Edit Data/buildings.json for costs and production
+- Edit Data/resources.json for resource values
+- Edit Data/tech_tree.json for technology requirements
+
+To add new content:
+- Add entries to appropriate JSON files
+- Create new sprite images
+- Update NPC profiles for new archetypes
+
+KNOWN ISSUES
+============
+
+- Sprite generation requires Pillow library
+- Some UI elements may need adjustment
+- Performance may vary with large NPC counts
+
+FUTURE IMPROVEMENTS
+===================
+
+- Multiplayer support
+- More biomes and terrain types
+- Unit combat system
+- Trade routes
+- Diplomacy with other civilizations
+- Achievements and statistics
+- Sound effects and music
+- Video cutscenes for era transitions
+
+LICENSE
+=======
+
+This project is open source and available for modification and distribution.
+

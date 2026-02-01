@@ -27,40 +27,11 @@ namespace ChronoCiv.Tests
         [Description("Verify NPC properties can be set and retrieved")]
         public void NPC_PropertyAccess()
         {
-            var npc = new NPC
-            {
-                npcId = "npc_001",
-                name = "Test NPC",
-                profession = "Farmer",
-                era = "stone_age",
-                age = 25
-            };
-
-            Assert.AreEqual("npc_001", npc.npcId, "NPC ID should match");
-            Assert.AreEqual("Test NPC", npc.name, "NPC name should match");
-            Assert.AreEqual("Farmer", npc.profession, "NPC profession should match");
-            Assert.AreEqual("stone_age", npc.era, "NPC era should match");
-            Assert.AreEqual(25, npc.age, "NPC age should match");
-        }
-
-        [Test]
-        [Category("NPC System")]
-        [Description("Verify NPC profile data structure")]
-        public void NPCProfile_DataStructure()
-        {
-            var profile = new NPCProfile
-            {
-                id = "farmer_basic",
-                name = "Basic Farmer",
-                professions = new List<string> { "farmer" },
-                eras = new List<string> { "stone_age", "ancient", "medieval" },
-                spawnWeight = 10
-            };
-
-            Assert.AreEqual("farmer_basic", profile.id, "Profile ID should match");
-            Assert.AreEqual("Basic Farmer", profile.name, "Profile name should match");
-            Assert.AreEqual(3, profile.eras.Count, "Should support 3 eras");
-            Assert.AreEqual(10, profile.spawnWeight, "Spawn weight should match");
+            var npc = new NPC();
+            // Note: NPC properties are private set or read-only, so we can't directly set them
+            // This test verifies the properties exist and are accessible
+            Assert.IsNotNull(npc.NPCId, "NPC ID should be generated");
+            Assert.IsNotNull(npc.DisplayName, "Display name should be accessible");
         }
 
         [Test]
@@ -75,11 +46,14 @@ namespace ChronoCiv.Tests
             Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Idle));
             Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Working));
             Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Moving));
+            Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Sleeping));
+            Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Socializing));
+            Assert.IsTrue(System.Enum.IsDefined(typeof(NPCState), NPCState.Dead));
         }
 
         [Test]
         [Category("NPC System")]
-        [Description("Verify NPC direction enum values")]
+        [Description("Verify Direction enum values")]
         public void Direction_EnumValues()
         {
             var directions = System.Enum.GetValues(typeof(Direction));
@@ -99,21 +73,178 @@ namespace ChronoCiv.Tests
         {
             var task = new Task
             {
-                taskId = "task_harvest",
-                name = "Harvest Crops",
-                description = "Harvest crops from the fields",
-                duration = 10,
-                rewards = new Dictionary<string, int>
+                Id = "task_harvest",
+                Name = "Harvest Crops",
+                Description = "Harvest crops from the fields",
+                Duration = 10,
+                ExperienceReward = 25
+            };
+
+            Assert.AreEqual("task_harvest", task.Id, "Task ID should match");
+            Assert.AreEqual("Harvest Crops", task.Name, "Task name should match");
+            Assert.AreEqual("Harvest crops from the fields", task.Description, "Task description should match");
+            Assert.AreEqual(10, task.Duration, "Task duration should match");
+            Assert.AreEqual(25, task.ExperienceReward, "Experience reward should match");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify Task with target position")]
+        public void Task_TargetPosition()
+        {
+            var task = new Task
+            {
+                Id = "task_build",
+                Name = "Build House",
+                TargetPosition = new Vector3(10, 5, 0)
+            };
+
+            Assert.IsTrue(task.TargetPosition.HasValue, "Task should have target position");
+            Assert.AreEqual(new Vector3(10, 5, 0), task.TargetPosition.Value, "Target position should match");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify Task without target position")]
+        public void Task_NoTargetPosition()
+        {
+            var task = new Task
+            {
+                Id = "task_pray",
+                Name = "Pray at Temple"
+            };
+
+            Assert.IsFalse(task.TargetPosition.HasValue, "Task should not have target position");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile data structure")]
+        public void NPCProfile_DataStructure()
+        {
+            var profile = new NPCProfile
+            {
+                Id = "farmer_basic",
+                Name = "Basic Farmer",
+                Era = "stone_age",
+                Archetype = "farmer",
+                DefaultTask = "farming",
+                SpawnWeight = 10,
+                CanMigrate = true,
+                CanReproduce = true,
+                Lifespan = 60,
+                Description = "A basic farmer NPC"
+            };
+
+            Assert.AreEqual("farmer_basic", profile.Id, "Profile ID should match");
+            Assert.AreEqual("Basic Farmer", profile.Name, "Profile name should match");
+            Assert.AreEqual("stone_age", profile.Era, "Era should match");
+            Assert.AreEqual("farmer", profile.Archetype, "Archetype should match");
+            Assert.AreEqual("farming", profile.DefaultTask, "Default task should match");
+            Assert.AreEqual(10, profile.SpawnWeight, "Spawn weight should match");
+            Assert.IsTrue(profile.CanMigrate, "Should be able to migrate");
+            Assert.IsTrue(profile.CanReproduce, "Should be able to reproduce");
+            Assert.AreEqual(60, profile.Lifespan, "Lifespan should match");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile with animations")]
+        public void NPCProfile_Animations()
+        {
+            var profile = new NPCProfile
+            {
+                Id = "guard",
+                Name = "Town Guard",
+                Animations = new List<string> { "idle", "walk", "run", "attack", "salute" }
+            };
+
+            Assert.AreEqual(5, profile.Animations.Count, "Should have 5 animations");
+            Assert.Contains("idle", profile.Animations, "Should have idle animation");
+            Assert.Contains("attack", profile.Animations, "Should have attack animation");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile sprite settings")]
+        public void NPCProfile_SpriteSettings()
+        {
+            var profile = new NPCProfile
+            {
+                SpriteBase = "npc_human_male_01",
+                SpriteSize = new List<int> { 32, 48 }
+            };
+
+            Assert.AreEqual("npc_human_male_01", profile.SpriteBase, "Sprite base should match");
+            Assert.AreEqual(2, profile.SpriteSize.Count, "Should have 2 size values");
+            Assert.AreEqual(32, profile.SpriteSize[0], "Width should match");
+            Assert.AreEqual(48, profile.SpriteSize[1], "Height should match");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile clothing dictionary")]
+        public void NPCProfile_Clothing()
+        {
+            var profile = new NPCProfile
+            {
+                Clothing = new Dictionary<string, string>
                 {
-                    { "food", 50 },
-                    { "gold", 10 }
+                    { "stone_age", "tunic_basic" },
+                    { "ancient", "tunic_fine" },
+                    { "medieval", "armor_iron" }
                 }
             };
 
-            Assert.AreEqual("task_harvest", task.taskId, "Task ID should match");
-            Assert.AreEqual("Harvest Crops", task.name, "Task name should match");
-            Assert.AreEqual(10, task.duration, "Task duration should match");
-            Assert.AreEqual(2, task.rewards.Count, "Should have 2 reward types");
+            Assert.AreEqual(3, profile.Clothing.Count, "Should have clothing for 3 eras");
+            Assert.AreEqual("tunic_basic", profile.Clothing["stone_age"], "Stone age clothing should match");
+            Assert.AreEqual("armor_iron", profile.Clothing["medieval"], "Medieval clothing should match");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile equipment list")]
+        public void NPCProfile_Equipment()
+        {
+            var profile = new NPCProfile
+            {
+                Equipment = new List<string> { "shovel", "backpack", "water_bottle" }
+            };
+
+            Assert.AreEqual(3, profile.Equipment.Count, "Should have 3 equipment items");
+            Assert.Contains("shovel", profile.Equipment, "Should have shovel");
+            Assert.Contains("backpack", profile.Equipment, "Should have backpack");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPCProfile skills list")]
+        public void NPCProfile_Skills()
+        {
+            var profile = new NPCProfile
+            {
+                Skills = new List<string> { "farming", "cooking", "bartering" }
+            };
+
+            Assert.AreEqual(3, profile.Skills.Count, "Should have 3 skills");
+            Assert.Contains("farming", profile.Skills, "Should have farming skill");
+            Assert.Contains("cooking", profile.Skills, "Should have cooking skill");
+        }
+
+        [Test]
+        [Category("NPC System")]
+        [Description("Verify NPC profile with dialogue set")]
+        public void NPCProfile_DialogueSet()
+        {
+            var profile = new NPCProfile
+            {
+                Id = "merchant",
+                Name = "Traveling Merchant",
+                DialogueSet = "merchant_greetings"
+            };
+
+            Assert.AreEqual("merchant_greetings", profile.DialogueSet, "Dialogue set should match");
         }
     }
 }
+

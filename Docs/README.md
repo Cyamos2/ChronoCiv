@@ -57,13 +57,54 @@ A retro-style civilization game that spans from Stone Age to Future, with time p
 
 ## Controls
 
-### Desktop Controls
+### Desktop Controls (Windows/Linux)
 - **Left Click**: Select/interact with NPCs, buildings
 - **Right Click**: Move character to position
 - **Middle Click / Alt+Left Click**: Pan camera
 - **Mouse Scroll**: Zoom in/out
 - **Space**: Pause/Resume time
 - **Escape**: Open menu
+- **Ctrl+S**: Quick Save
+- **Ctrl+L**: Quick Load
+- **Ctrl+P**: Pause/Resume
+- **Ctrl+R**: Restart
+
+### macOS Controls
+- **Left Click**: Select/interact with NPCs, buildings
+- **Right Click**: Move character to position
+- **Middle Click / Option+Left Click**: Pan camera
+- **Mouse Scroll / Trackpad Scroll**: Zoom in/out
+- **Space**: Pause/Resume time
+- **Escape**: Open menu
+
+#### Keyboard Shortcuts (Mac)
+| Shortcut | Action |
+|----------|--------|
+| ⌘ + S | Quick Save |
+| ⌘ + L | Quick Load |
+| ⌘ + P | Pause/Resume |
+| ⌘ + R | Restart Game |
+| ⌘ + , | Settings |
+| ⌘ + Q | Quit Game |
+| ⌘ + F | Toggle Fullscreen |
+
+#### Trackpad Gestures (Mac)
+| Gesture | Action |
+|---------|--------|
+| Two-finger Scroll | Pan camera |
+| Two-finger Pinch | Zoom in/out |
+| Three-finger Swipe Left | Previous era |
+| Three-finger Swipe Right | Next era |
+| Three-finger Tap | Interact |
+
+#### Arrow Keys
+| Key | Action |
+|-----|--------|
+| ↑/↓ | Move North/South |
+| ←/→ | Move West/East |
+| Tab | Cycle through NPCs/buildings |
+| Enter | Select/Confirm |
+| Delete | Cancel/Delete |
 
 ### iOS Controls
 - **Tap**: Select/interact with NPCs, buildings

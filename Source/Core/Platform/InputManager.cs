@@ -52,6 +52,11 @@ namespace ChronoCiv.Core.Platform
         public float PinchDelta { get; private set; }
         public Vector2 TouchDelta { get; private set; }
 
+        // macOS-specific Properties
+        public bool IsMacPlatform => currentPlatform == InputPlatform.macOS;
+        public bool IsCommandKeyDown => Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightCommand);
+        public float ScrollWheelDelta => Input.mouseScrollDelta.y;
+
         // Events
         public event Action OnPointerDown;
         public event Action OnPointerUp;
@@ -78,7 +83,8 @@ namespace ChronoCiv.Core.Platform
             Desktop,
             iOS,
             Android,
-            WebGL
+            WebGL,
+            macOS
         }
 
         private void Awake()
@@ -113,6 +119,9 @@ namespace ChronoCiv.Core.Platform
 #elif UNITY_WEBGL && !UNITY_EDITOR
             isMobilePlatform = IsMobileBrowser();
             currentPlatform = isMobilePlatform ? InputPlatform.WebGL : InputPlatform.Desktop;
+#elif UNITY_STANDALONE_OSX && !UNITY_EDITOR
+            isMobilePlatform = false;
+            currentPlatform = InputPlatform.macOS;
 #else
             isMobilePlatform = false;
             currentPlatform = InputPlatform.Desktop;
@@ -438,6 +447,47 @@ namespace ChronoCiv.Core.Platform
             currentPlatform = mode;
             isMobilePlatform = mode == InputPlatform.iOS || mode == InputPlatform.Android || mode == InputPlatform.WebGL;
             DetectPlatform();
+        }
+
+        /// <summary>
+        /// Check if a macOS-style shortcut is pressed (Command + Key).
+        /// On macOS, uses Command key. On other platforms, uses Control key.
+        /// </summary>
+        public bool IsMacShortcutPressed(KeyCode key)
+        {
+            if (isMobilePlatform) return false;
+
+#if UNITY_STANDALONE_OSX
+            return (Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightCommand)) && Input.GetKeyDown(key);
+#else
+            return (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(key);
+#endif
+        }
+
+        /// <summary>
+        /// Check if a macOS-style shortcut is held (Command + Key).
+        /// </summary>
+        public bool IsMacShortcutHeld(KeyCode key)
+        {
+            if (isMobilePlatform) return false;
+
+#if UNITY_STANDALONE_OSX
+            return (Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightCommand)) && Input.GetKey(key);
+#else
+            return (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKey(key);
+#endif
+        }
+
+        /// <summary>
+        /// Get the modifier key name for display (⌘ on Mac, Ctrl otherwise).
+        /// </summary>
+        public string GetModifierKeyName()
+        {
+#if UNITY_STANDALONE_OSX
+            return "⌘";
+#else
+            return "Ctrl";
+#endif
         }
     }
 }

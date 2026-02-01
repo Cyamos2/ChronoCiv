@@ -14,8 +14,11 @@ PLATFORMS
 Desktop (Windows, Mac, Linux)
 -----------------------------
 - Mouse and keyboard controls
-- Full keyboard shortcuts
-- High-resolution support
+- Full keyboard shortcuts (⌘ on Mac, Ctrl on Windows)
+- High-resolution support including Retina displays
+- Trackpad gesture support on Mac
+- Magic Mouse support
+- Optimized for both Intel and Apple Silicon (M1/M2/M3)
 
 iOS (iPhone, iPad)
 ------------------
@@ -24,6 +27,20 @@ iOS (iPhone, iPad)
 - Virtual joystick option
 - Pinch to zoom, swipe to pan
 - Haptic feedback support
+- Dark Mode support
+- Low Power Mode awareness
+
+macOS (Mac App Store & Direct Distribution)
+--------------------------------------------
+- Native macOS controls with Command key shortcuts
+- Full keyboard shortcuts: ⌘S (save), ⌘L (load), ⌘P (pause)
+- Trackpad scroll and pinch gestures
+- Magic Mouse support
+- Retina display optimization
+- Metal rendering support
+- Apple Silicon native performance
+- Fullscreen mode support
+- Code signing and notarization ready
 
 CROSS-PLAY FEATURES
 ===================

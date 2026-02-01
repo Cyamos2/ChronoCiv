@@ -47,6 +47,16 @@ namespace ChronoCiv.Core.Platform
         [Header("Input (Touch)")]
         [SerializeField] private bool twoFingerPan = true;
         [SerializeField] private float pinchZoomThreshold = 0.1f;
+        [SerializeField] private float gestureSmoothing = 0.15f;
+        [SerializeField] private bool enableHapticOnZoom = true;
+
+        [Header("Input (Mac/Trackpad)")]
+        [SerializeField] private bool enableTrackpadScroll = true;
+        [SerializeField] private float trackpadScrollMultiplier = 1f;
+        [SerializeField] private bool enableTrackpadPinch = true;
+        [SerializeField] private float trackpadPinchMultiplier = 1f;
+        [SerializeField] private bool enableMagicMouseScroll = true;
+        [SerializeField] private float magicMouseScrollMultiplier = 1f;
 
         // Public Properties
         public float CurrentDistance => distance;
@@ -119,9 +129,54 @@ namespace ChronoCiv.Core.Platform
             {
                 HandleTouchInput(inputManager);
             }
+            else if (inputManager != null && inputManager.IsMacPlatform)
+            {
+                HandleMacInput(inputManager);
+            }
             else
             {
                 HandleMouseInput();
+            }
+        }
+
+        private void HandleMacInput(InputManager inputManager)
+        {
+            // Handle trackpad scroll for panning
+            if (enableTrackpadScroll)
+            {
+                float scrollDelta = inputManager.ScrollWheelDelta;
+                if (Mathf.Abs(scrollDelta) > 0.001f)
+                {
+                    // Trackpad scroll typically pans camera
+                    Vector3 move = new Vector3(-scrollDelta * trackpadScrollMultiplier, 0, -scrollDelta * trackpadScrollMultiplier);
+                    targetPosition += transform.TransformDirection(move) * distance * 0.5f;
+                }
+            }
+
+            // Handle mouse scroll for zoom (or panning if preferred)
+            float mouseScroll = Input.mouseScrollDelta.y;
+            if (Mathf.Abs(mouseScroll) > 0.001f)
+            {
+                Zoom(-mouseScroll * zoomSpeed);
+            }
+
+            // Handle Option+Click for panning (Mac convention)
+            if (Input.GetMouseButtonDown(0) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)))
+            {
+                isDragging = true;
+                lastMousePosition = Input.mousePosition;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+            }
+
+            if (isDragging)
+            {
+                Vector3 delta = Input.mousePosition - lastMousePosition;
+                Vector3 move = new Vector3(-delta.x, 0, -delta.y) * panSpeed * distance * 0.01f;
+                targetPosition += transform.TransformDirection(move);
+                lastMousePosition = Input.mousePosition;
             }
         }
 
